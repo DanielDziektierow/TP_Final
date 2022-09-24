@@ -18,8 +18,8 @@ app.use(express.json());
 app.use('/api', require('./routes/task.router'));
 
 // Static Files
-app.use('/View',express.static(path.join(__dirname, 'public')));;
-console.log(path.join(__dirname, './View/public'))
+app.use(express.static(path.join(__dirname, '/View/public')));;
+//console.log(path.join(__dirname, './View/public'))
 // Starting the server
 app.listen(app.get('port'), () => {
     console.log(`Server on port ${app.get('port')}`);
