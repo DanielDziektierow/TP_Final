@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async(req, res) => {
   const {title, description} = req.body;
   const task= new Task({title, description});
-  //await task.save();  no lo guarda
+  await task.save();
   res.json({status: 'Task saved'});
 });
 
