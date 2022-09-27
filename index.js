@@ -19,7 +19,7 @@ app.use(express.json());
 app.use('/api/tasks', require('./routes/task.router'));
 
 // Static Files
-app.use(express.static(path.join(__dirname, '/public/')));
+app.use(express.static(path.join(__dirname, '/view/public/')));
 
 // Starting the server
 app.listen(app.get('port'), () => {
