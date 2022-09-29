@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Title from './components/Title/Title.jsx'
@@ -8,6 +8,13 @@ import Table from './components/Table/Table.jsx';
 
 
 const App = () => {
+    const [data, setdata] = useState({});
+    useEffect(() => {
+        fetch('http://localhost:3000/api/tasks')
+            .then((response) => response.json())
+            .then((data) => console.log(data));
+    }, []);
+    
     return (
         <div>
             <nav className='green'>
@@ -24,5 +31,6 @@ const App = () => {
         </div>
     );
 };
+
 
 export default App;

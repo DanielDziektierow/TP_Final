@@ -19,16 +19,16 @@ router.get('/:id', async (req, res) => {
 
 //New task
 router.post('/', async(req, res) => {
-  const {title, description} = req.body;
-  const task= new Task({title, description});
+  const {vesselname, depature, arrival} = req.body;
+  const task= new Task({vesselname, depature, arrival});
   await task.save();
   res.json({status: 'Task saved'});
 });
 
 // UPDATE a new task
 router.put('/:id', async (req, res) => {
-  const { title, description } = req.body;
-  const newTask = {title, description};
+  const {vesselname, depature, arrival} = req.body;
+  const newTask = {vesselname, depature, arrival};
   await Task.findByIdAndUpdate(req.params.id, newTask);
   res.json({status: 'Task Updated'});
 });
