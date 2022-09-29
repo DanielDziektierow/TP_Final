@@ -8,11 +8,11 @@ import Table from './components/Table/Table.jsx';
 
 
 const App = () => {
-    const [data, setdata] = useState({});
+    const [dataGeneral, setdataGeneral] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:3000/api/tasks')
+        fetch('http://localhost:3000/api')
             .then((response) => response.json())
-            .then((data) => console.log(data));
+            .then((data) =>setdataGeneral(data));
     }, []);
     
     return (
@@ -22,11 +22,11 @@ const App = () => {
                     <Title/>
                 </div>
             </nav>
-            <div className="col 5">
-                <VesselDetail/>
+            <div className="col 4">
+                 <VesselDetail/> 
             </div>
-            <div className="col 7">
-                <Table/>
+            <div className="col 4">
+                <Table listData={dataGeneral}/>
             </div>
         </div>
     );

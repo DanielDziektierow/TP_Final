@@ -1,6 +1,7 @@
 import React from "react";
 
-const Table = () => {
+const Table = ({listData}) => {
+  
     return(
         <main>
             <table>
@@ -12,9 +13,17 @@ const Table = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  
-                </tbody>
-              </table>
+                {listData.map((dt, key)=>{
+                    return (
+                      <tr>
+                        <td key={key}>{dt.vesselname}</td>
+                        <td key={key}>{dt.depature}</td>
+                        <td key={key}>{dt.arrival}</td>
+                      </tr>
+                      )
+                    })}
+                   </tbody>
+                   </table>
         </main>
     )
 }
