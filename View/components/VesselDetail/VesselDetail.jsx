@@ -36,7 +36,7 @@ const VesselDetail = () => {
         <main>
           <div class="row">
             <div class="col s5">
-              <div class="card blue darken-1">
+              
                 <div className="card" class="card blue">
                     <div className="card-content">
                       <form onSubmit={(e)=> enviarDatos(e) } >
@@ -62,14 +62,15 @@ const VesselDetail = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              
             </div>
-            <ul>
-              <li>{datos.vesselname}</li>
+            {/* <ul> 
+            <li>{datos.vesselname}</li>
               <li>{datos.arrival}</li>
               <li>{datos.depature}</li>
-                
             </ul>
+            */}
+              
   </main>
     )
 }

@@ -16,16 +16,12 @@ const App = () => {
     }, []);
     
     return (
-        <div>
-            <nav className='green'>
-                <div className='container'>
-                    <Title/>
-                </div>
-            </nav>
-            <div className="col 4">
-                 <VesselDetail/> 
+        <div class='title'>
+            <Title/>
+            <div class="vesseldetail">
+                <VesselDetail/>
             </div>
-            <div className="col 4">
+            <div className="info">
                 <Table listData={dataGeneral}/>
             </div>
         </div>
