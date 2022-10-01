@@ -14,6 +14,14 @@ const App = () => {
             .then((response) => response.json())
             .then((data) =>setdataGeneral(data));
     }, []);
+
+    const handleDelete = (id) => {
+        fetch('http://localhost:3000/api/' + id, {
+            method: 'DELETE'
+        })
+            .then((response) => response.json())
+            .then((data) => alert(data, 'se elimino exitosamente'));
+    }
     
     return (
         <div class='title'>
@@ -22,7 +30,11 @@ const App = () => {
                 <VesselDetail/>
             </div>
             <div className="info">
-                <Table listData={dataGeneral}/>
+            <Table
+                      listData={dataGeneral}
+                      onEdit={(dt)=>handleEdit(dt)}
+                      onDelete = {(dt)=>handleDelete(dt)}
+                    />
             </div>
             <br/>
             <div class='footer' >
