@@ -5,7 +5,7 @@ import Title from './components/Title/Title.jsx'
 import Navbar from './components/Navbar/Navbar.jsx';
 import VesselDetail from './components/VesselDetail/VesselDetail.jsx';
 import Table from './components/Table/Table.jsx';
-
+import FooterEnd from './components/FooterEnd/FooterEnd.jsx';
 
 const App = () => {
     const [dataGeneral, setdataGeneral] = useState([]);
@@ -23,6 +23,10 @@ const App = () => {
             </div>
             <div className="info">
                 <Table listData={dataGeneral}/>
+            </div>
+            <br/>
+            <div class='footer' >
+                <FooterEnd/>
             </div>
         </div>
     );
